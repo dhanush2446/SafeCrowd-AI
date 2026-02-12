@@ -19,28 +19,6 @@ This project is an intelligent orchestration platform designed to enhance safety
 
 ## 🏗 Project Architecture
 
-# 🛡 SafeCrowd AI – Event Safety Planner
-
-SafeCrowd AI is an intelligent event safety planning system that combines  
-Machine Learning risk prediction with AI-generated localized traffic strategies  
-to help organizers plan safer and smarter large-scale events.
-
----
-
-## 🚀 Features
-
-- 🤖 AI-powered traffic & safety strategy generation
-- 📊 Machine Learning-based crowd risk prediction
-- 📈 Interactive risk gauge visualization
-- 🧠 Crowd density sensitivity modeling
-- 🏙 Location-aware traffic planning
-- 🎨 Modern premium frontend (React + Tailwind)
-- ⚡ FastAPI backend with ML integration
-
----
-
-## 🏗 Project Architecture
-
 safecrowd/
 │
 ├── backend/
@@ -111,4 +89,5 @@ uvicorn app.main:app --reload
 cd frontend
 npm install
 npm run dev
+
 
