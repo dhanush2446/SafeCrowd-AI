@@ -1,0 +1,23 @@
+# --- Web Server & API ---
+fastapi
+uvicorn
+pydantic-settings
+python-dotenv
+requests
+
+# --- AI & LLM ---
+groq
+openai
+transformers
+
+# --- Data Science & Machine Learning ---
+pandas
+numpy
+scikit-learn
+xgboost
+joblib
+
+# --- Geospatial & Mapping ---
+shapely
+networkx
+osmnx

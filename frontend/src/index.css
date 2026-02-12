@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ===== GLOBAL LIGHT AMBER THEME ===== */
+body {
+  background: linear-gradient(
+    135deg,
+    #fff7ed 0%,   /* amber-50 */
+    #ffffff 45%,
+    #fffbeb 100%  /* amber-100 */
+  );
+  color: #1f2937; /* gray-800 */
+  font-family: 'Inter', system-ui, sans-serif;
+}
