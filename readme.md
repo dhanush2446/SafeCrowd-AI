@@ -71,6 +71,8 @@ safecrowd/
 - Styled instructions display
 - Premium UI with subtle background effects
 
+Give details of events like event name, venue, date of the event, expected crowd, venue capacity. And the **SafeCrowd AI** gives you a detailed safety plan and management instructions
+
 ---
 
 # ⚙️ Backend Setup
@@ -89,5 +91,6 @@ uvicorn app.main:app --reload
 cd frontend
 npm install
 npm run dev
+
 
 
