@@ -6,9 +6,9 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 class RiskPredictor:
     def __init__(self):
-        self.dataset_path = (
-            r"C:\Users\dhanush varma\OneDrive\Desktop\projs\event planner1"
-            r"\backend\app\event risk dataset.csv"
+        self.dataset_path = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)), 
+            "event risk dataset.csv"
         )
 
         # Models
