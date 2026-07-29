@@ -201,6 +201,15 @@ Be concise, professional, and provide actionable advice. Focus on safety best pr
             "response": f"Sorry, I encountered an error: {str(e)}"
         }
 
+@app.get("/")
+async def root():
+    return {
+        "message": "Welcome to SafeCrowd AI Backend Service API",
+        "docs": "/docs",
+        "health": "/health",
+        "status": "online"
+    }
+
 @app.get("/health")
 async def health_check():
     return {
