@@ -6,10 +6,9 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 class RiskPredictor:
     def __init__(self):
-        self.dataset_path = (
-            r"C:\Users\dhanush varma\OneDrive\Desktop\projs\event planner1"
-            r"\backend\app\event risk dataset.csv"
-        )
+        # Resolve path relative to this file: models/ -> app/ -> event risk dataset.csv
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.dataset_path = os.path.join(base_dir, "event risk dataset.csv")
 
         # Models
         self.classifier = RandomForestClassifier(
