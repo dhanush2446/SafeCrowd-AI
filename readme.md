@@ -1,96 +1,50 @@
+# SafeCrowd AI Event Planner System
 
-# 🛡 SafeCrowd AI – Event Safety Planner
+SafeCrowd AI is an intelligent event planning and safety management system that combines a Python FastAPI backend with a React frontend. It helps event organizers assess crowd risk, generate safety plans, and interact with an AI assistant for operational guidance.
 
-This project is an intelligent orchestration platform designed to enhance safety and traffic management for large-scale public events. By integrating Large Language Models (LLMs) with geospatial analytics, the system automates risk assessments and operational planning. It replaces manual oversight with an AI-driven engine that calculates crowd density to predict stampede risks and analyzes local road networks to generate precise traffic diversion plans. The system allows planners to input natural language instructions—such as weather alerts or VIP presence—which the AI uses to improvise localized strategies, including specific road closures and emergency routes. This project provides a clear, actionable safety report, ensuring that high-density gatherings remain secure.
+## Features
 
----
+- Event-based risk assessment using Python ML logic (Random Forest)
+- AI-generated crowd and traffic management strategy
+- Interactive Leaflet Command Map with automated AI element placement (gates, exits, medical posts, security)
+- 3D Venue Simulator & Interactive Crowd Density Risk Simulator
+- Real-time Intel Panel & AI Emergency Assistant
+- Modern React-based dashboard for planning and visualization
 
-## 🚀 Features
+## Project Structure
 
-- 🤖 AI-powered traffic & safety strategy generation
-- 📊 Machine Learning-based crowd risk prediction
-- 📈 Interactive risk gauge visualization
-- 🧠 Crowd density sensitivity modeling
-- 🏙 Location-aware traffic planning
-- 🎨 Modern premium frontend (React + Tailwind)
-- ⚡ FastAPI backend with ML integration
-
----
-
-## 🏗 Project Architecture
-
-safecrowd/
-│
+```text
+event planner1/
 ├── backend/
-│ ├── app/
-│ │ ├── main.py
-│ │ ├── config.py
-│ │ ├── models/
-│ │ │ ├── risk_predictor.py
-│ │ │ └── plan_traffic.py
-│ │ └── data/
-│ │ └── event risk dataset.csv
-│ ├── plan_event_cli.py
-│
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   └── models/
+│   └── requirements.txt
 ├── frontend/
-│ ├── src/
-│ │ ├── pages/
-│ │ │ ├── landing.jsx
-│ │ │ └── home.jsx
-│ │ ├── components/
-│ │ ├── app.jsx
-│ │ └── main.jsx
-│ └── package.json
-|
-└── requirements.txt
-└── README.md
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── 3d/
+│   │   │   ├── CommandMap.jsx
+│   │   │   ├── IntelPanel.jsx
+│   │   │   └── ElementPalette.jsx
+│   │   ├── pages/
+│   │   └── api.js
+│   ├── package.json
+│   └── vite.config.js
+└── readme.md
+```
 
+## Tech Stack
 
----
+- Backend: Python, FastAPI, Pydantic, Uvicorn, Scikit-Learn, Groq API
+- Frontend: React, Vite, Tailwind CSS, Leaflet, Three.js / React Three Fiber, Axios
 
-# 🧠 How It Works
+## Deployments
 
-### 1️⃣ Risk Prediction (ML Model)
-- Uses RandomForestClassifier + RandomForestRegressor
-- Predicts:
-  - Risk Category (Low → Very Critical)
-  - Risk Score (0–1 scaled)
-- Sensitive to crowd changes and venue capacity
+- Frontend: Vercel (`https://safe-crowd-ai.vercel.app`)
+- Backend: Render (`https://safecrowd-ai.onrender.com`)
 
-### 2️⃣ AI Traffic Strategy
-- Generates geographically precise safety plans
-- Includes:
-  - Road diversions
-  - Crowd monitoring
-  - Medical response
-  - Parking logistics
+## License
 
-### 3️⃣ Frontend Visualization
-- Elegant amber theme
-- Interactive animated risk gauge
-- Styled instructions display
-- Premium UI with subtle background effects
-
-Give details of events like event name, venue, date of the event, expected crowd, venue capacity. And the **SafeCrowd AI** gives you a detailed safety plan and management instructions
-
----
-
-# ⚙️ Backend Setup
-
-### 📌 1. Navigate to backend folder
-
-```bash
-cd backend
-uvicorn app.main:app --reload 
-
-# ⚙️ Frontend Setup
-
-### 📌 1. Navigate to frontend folder
-
-```bash
-cd frontend
-npm install
-npm run dev
-
-
-
+This project is for educational and portfolio demonstration purposes.

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { planEvent } from "../api";
+import ReactMarkdown from "react-markdown";
 
 export default function PlanFormCard() {
   const [form, setForm] = useState({
@@ -20,11 +21,29 @@ export default function PlanFormCard() {
   }
 
   async function handleSubmit() {
+    if (!form.name || !form.name.trim()) {
+      setError("⚠️ Please enter an Event Name.");
+      return;
+    }
+    if (!form.location || !form.location.trim()) {
+      setError("⚠️ Please enter a Location.");
+      return;
+    }
+    if (!form.attendees || Number(form.attendees) <= 0) {
+      setError("⚠️ Please enter expected crowd count.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
     try {
-      const data = await planEvent(form);
+      const payload = {
+        ...form,
+        attendees: Number(form.attendees) || 0,
+        capacity: Number(form.capacity) || 0,
+      };
+      const data = await planEvent(payload);
       setResult(data);
     } catch (err) {
       setError("Failed to generate plan");
@@ -105,8 +124,12 @@ export default function PlanFormCard() {
             Safety & Traffic Instructions
           </h3>
 
-          <div className="text-gray-700 whitespace-pre-wrap leading-relaxed">
-            {result?.trafficPlan?.detailed_strategy || "No instructions generated"}
+          <div className="text-gray-700 leading-relaxed">
+            <div className="prose prose-sm prose-amber max-w-none">
+              <ReactMarkdown>
+                {result?.trafficPlan?.detailed_strategy || "No instructions generated"}
+              </ReactMarkdown>
+            </div>
           </div>
         </div>
       )}
