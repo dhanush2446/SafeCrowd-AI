@@ -235,7 +235,7 @@ async def auto_place(req: AutoPlaceRequest):
         g_lng = lng + radius * math.sin(angle)
         dir_name = gate_directions[i % len(gate_directions)]
         label = f"Gate {i + 1} ({dir_name} Access)"
-        elements.push = elements.append({
+        elements.append({
             "id": f"auto-gate-{i+1}",
             "type": "gate",
             "label": label,
